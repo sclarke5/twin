@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
+    @products = Product.all
   end
 
   def show
@@ -20,5 +21,5 @@ class ProductsController < ApplicationController
 
   def destroy
   end
-  
+
 end
