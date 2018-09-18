@@ -3,6 +3,6 @@
   <% @products.each do |p| %>
   <h3><%= p.name %></h3>
   <h3><%= p.description %></h3>
-  <h3><%= p.price_in_cents %></h3>
+  <h3><%= p.price_in_dollars %></h3>
   <%= link_to("Show", product_path(p.id))%>
   <% end %>
