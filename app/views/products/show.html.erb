@@ -6,4 +6,6 @@
 
 <%= link_to("Home", products_path) %>
 
+<%= link_to("Edit", edit_product_path(@product.id)) %>
+
 <%= link_to("Delete", product_path, :method => :delete) %>
