@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
       redirect_to product_path(id: params[:product_id])
     else
     	flash[:warning] = @review.errors.full_messages
-      render edit_product_review_path
+      render edit_product_review_path #this won't work anyway.. need params
     end
   end
 
