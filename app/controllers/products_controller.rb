@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @review = Review.new  
+    @review = Review.new
   end
 
   def new
@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
     @product.description = params[:product][:description]
     @product.price_in_cents = params[:product][:price_in_cents]
     if @product.save
-      flash[:notice] = "Product added sucessfully"
+      flash[:notice] = "Product added successfully"
       redirect_to product_url(@product.id)
     else
       flash[:alert] = "Failed to create product"

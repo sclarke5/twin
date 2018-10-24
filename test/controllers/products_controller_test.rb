@@ -8,6 +8,9 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get products_url
     assert_response :success
+
+    assert_equal "index", @controller.action_name
+    assert_match "Products", @response.body
   end
 
   test "should get show" do
@@ -21,7 +24,16 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to product_path(Product.last)
+    assert_equal "Product added successfully", flash[:notice]
   end
+
+  test "round two index" do
+    get products_url
+
+    assert_equal "index", @controller.action_name
+    assert_match "Products", @response.body
+  end
+
 end
 
 # name: MyString
